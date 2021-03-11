@@ -1,0 +1,24 @@
+package com.cg.l8.ui;
+
+import java.util.*;
+
+public class TimerThreadTest {
+	public static void main(String []args) {
+      Task t1 = new Task("Task 1");
+     
+      Timer t = new Timer();
+      t.schedule(t1, 10000); 
+   }
+}
+
+class Task extends TimerTask {
+   private String name;
+  
+   public Task(String name) {
+       this.name = name;
+   }
+   
+   public void run() {
+      System.out.println("[" + new Date() + "] " + name + ": task executed!");
+   }
+}
